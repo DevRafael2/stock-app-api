@@ -39,7 +39,7 @@ Este proyecto implementa una arquitectura robusta basada en principios de diseñ
    Debe existir una base llamada **StockAppDev** en PostgreSQL.
 
 3. **Ejecutar el Script de Inicialización**
-   Ejecutar el archivo adjunto **query-postgree-sql.sql** para crear tablas e insertar datos iniciales.
+   Ejecutar el archivo adjunto [query-postgree-sql.sql](https://github.com/DevRafael2/stock-app-api/blob/main/query-postgree-sql.sql) para crear tablas e insertar datos iniciales.
 
 
 
