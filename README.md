@@ -2,6 +2,11 @@
 
 Este proyecto implementa una arquitectura robusta basada en principios de diseño y patrones de software que permiten escalabilidad, mantenibilidad y separación clara de responsabilidades.
 
+## Tecnologías
+- .Net 9.0
+- PostgreSQL 18
+
+
 ## 🏛️ Arquitectura y Patrones Utilizados
 
 - **CQRS (Command Query Responsibility Segregation)**
