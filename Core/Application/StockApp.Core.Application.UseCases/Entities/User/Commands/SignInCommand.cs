@@ -45,7 +45,7 @@ public class SignInCommand(
         if (userExist is null)
             return new ResponseApi { Message = "Credenciales incorrectas", StatusResponse = StatusResponse.UnAuthorize };
 
-        var token = CreateToken(userExist.Id, request.Credentials.Email!);
+        var token = CreateToken(userExist.Id, request.Credentials.Email!, userExist.Name!);
 
         return new ResponseApiData<OutSignIn> { 
             StatusResponse = StatusResponse.Ok, 
@@ -63,11 +63,13 @@ public class SignInCommand(
     /// </summary>
     /// <param name="userId">Id del usuario</param>
     /// <param name="email">Correo del usuario</param>
+    /// <param name="userName">Nombre de usuario</param>
     /// <returns>Retorna token del usuario</returns>
-    private string CreateToken(Guid userId, string email)
+    private string CreateToken(Guid userId, string email, string userName)
     {
         var createdAt = DateTime.UtcNow.ToString("dd-MM-yyyy");
         var claims = new List<Claim> {
+            new ("userName", userName),
             new (ClaimTypes.Name, userId.ToString()),
             new ("email", email),
             new ("userId", userId.ToString()),
