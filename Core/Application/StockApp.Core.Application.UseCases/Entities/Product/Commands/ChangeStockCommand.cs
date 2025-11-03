@@ -37,6 +37,7 @@ public class ChangeStockCommand(
             .BadRequest("La información contiene errores")
             .AddNewErrors(resultValidation.Errors.Select(e => e.ErrorMessage));
         
+        
         var userId = httpContextAccesor.HttpContext.User?.Identity!.Name;
         
         var updateProduct = await unitOfWork.GetRepository<Product, int>()
@@ -44,6 +45,9 @@ public class ChangeStockCommand(
 
         if (updateProduct is null)
             return new ResponseApi().NotFound("No se ha encontrado el producto solicitado");
+        
+        if (updateProduct.Amount + request.Entity.Amount < 0)
+            return new ResponseApi().BadRequest($"No se puede retirar {request.Entity.Amount}, actualmente solo hay {updateProduct.Amount}");
         
         updateProduct.Amount += request.Entity.Amount;
         
