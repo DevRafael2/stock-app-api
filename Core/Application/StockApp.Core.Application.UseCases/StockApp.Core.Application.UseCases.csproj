@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\StockApp.Shared.Constants\StockApp.Shared.Constants.csproj" />
+      <ProjectReference Include="..\..\..\Shared\StockApp.Shared.Helpers\StockApp.Shared.Helpers.csproj" />
+      <ProjectReference Include="..\..\Domain\StockApp.Core.Domain.Entities\StockApp.Core.Domain.Entities.csproj" />
+      <ProjectReference Include="..\..\Domain\StockApp.Core.Domain.Primitives\StockApp.Core.Domain.Primitives.csproj" />
+      <ProjectReference Include="..\StockApp.Core.Application.Dtos\StockApp.Core.Application.Dtos.csproj" />
+      <ProjectReference Include="..\StockApp.Core.Application.Interfaces\StockApp.Core.Application.Interfaces.csproj" />
+      <ProjectReference Include="..\StockApp.Core.Application.Mappers\StockApp.Core.Application.Mappers.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.10" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.1" />
+    </ItemGroup>
+
+</Project>
